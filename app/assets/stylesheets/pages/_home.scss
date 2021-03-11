@@ -1,6 +1,8 @@
 // Specific CSS for your home-page
+
 @import "components/banner";
 @import "components/footer";
+
 
 .search-form-control {
   position: relative;
@@ -23,6 +25,7 @@
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
 }
 
 .search-bar {
