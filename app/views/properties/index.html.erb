@@ -1,0 +1,30 @@
+<h1 class="border-bottom">This are all our porperties</h1>
+<ul>
+  
+  <% @properties.each do |property| %>
+    <div>
+      <%= link_to property_path(property) do %>
+
+        <img src="https://source.unsplash.com/random" alt="..." width="300" height="300">
+        <li>
+          <h2><%= property.title %></h2>
+        </li>
+        <li>
+          <h3>$ <%= property.price %></h3>
+        </li>
+        <li>
+          <p>Address: <%= property.address %></p>
+        </li>
+        <li>
+          <p>Bedrooms: <%= property.bedrooms %></p>
+        </li>
+        <li>
+          <p>Bathrooms: <%= property.bathrooms %></p>
+        </li>
+        <li>
+          <p>sqm: <%= property.sq_meters %></p>
+        </li>
+      <%end %>
+    </div>  
+  <% end %>
+</ul>

@@ -10,6 +10,8 @@ Property.destroy_all
 
 puts 'Creating 4 new Users'
 emails = ["alston@gmail.com", "matheus@gmail.com", "david@gmail.com"]
+titles = ["Big Blue House", "Nice and Spacious", "Luxury Home", "Cheap Offer", "Newst Rebuilt"]
+
 
 3.times do 
     user = User.new(
@@ -54,7 +56,8 @@ puts 'Creating 10 new Properties'
     central_air: [false, true].sample,
     dishwasher: [false, true].sample,
     washing_machine: [false, true].sample,
-    attached_garage: [false, true].sample
+    attached_garage: [false, true].sample,
+    title: titles.sample
     )
     property.save!
 end
