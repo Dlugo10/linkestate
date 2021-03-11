@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/LqE8GMoR-1380x690.jpeg);">
+  <div class="flex-container">
+    <h1>Using data to help you be a more infomed buyer or seller of your biggest asset</h1>
+  </div>
+
+  <div class="search-bar">
+    <%= form_tag properties_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a home"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
+
+</div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Brought to you by the best Le Wagon Crew! <i class="fas fa-heart"></i> 
+  </div>
+</div>
