@@ -1,2 +1,62 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "new";
+@import "show";
+
+.main-container {
+}
+.container {    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 25px;
+    }
+
+
+.row {
+  position: sticky;
+  top: 0;
+  z-index: 100; //allows the map to stay in fron of cards when scrolling
+}
+.container-user-form {
+  border-radius: 10px;
+}
+
+#map {
+  border-radius: 10px;
+}
+
+button.btn {
+    align-items: bottom;
+  }
+
+.btn {
+  border-radius: 10px;
+}
+
+.btn-group {
+  display: inline-block;
+  margin: 20px;
+}
+
+h1 {
+  margin: 10px 30px;
+}
+
+.card {
+  border-radius: 5%;
+}
+.card-img-top {
+  border-radius: 5%;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.buttons-bottom {
+  position: absolute;
+  bottom: 20px;
+}
