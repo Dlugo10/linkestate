@@ -6,6 +6,9 @@
 
         <img src="https://source.unsplash.com/random" alt="..." width="300" height="300">
 
+        
+        <h5><%= link_to "Edit Property", edit_property_path %></h5>
+
         <h2 class="border-bottom"><%= @properties.title %></h2>
 
         <h3>$ <%= @properties.price %></h3>
@@ -27,26 +30,27 @@
           <p>Land Extension: <%= @properties.sq_meters_land %>m2</p>
 
         <h3 class="border-bottom">Amenities</h3>
-          <p>Beach Front:
-            <%= @properties.beachfront == false ? "No" : "Yes" %>
+
+          <p>Beach Front: 
+            <%= text_boolean(@properties.beachfront) %>
           </p>
-          <p>Water Front:
-            <%= @properties.waterfront == false ? "No" : "Yes" %>
+          <p>Water Front: 
+            <%= text_boolean(@properties.waterfront) %>
           </p>
-          <p>Pool:
-            <%= @properties.pool == false ? "No" : "Yes" %>
+          <p>Pool: 
+            <%= text_boolean(@properties.pool) %>
           </p>
-          <p>Central Air:
-            <%= @properties.waterfront == false ? "No" : "Yes" %>
+          <p>Central Air: 
+            <%= text_boolean(@properties.waterfront) %>
           </p>
-          <p>Dish Washer:
-            <%= @properties.dishwasher == false ? "No" : "Yes" %>
+          <p>Dish Washer: 
+            <%= text_boolean(@properties.dishwasher) %>
           </p>
-          <p>Washing Machine:
-            <%= @properties.washing_machine == false ? "No" : "Yes" %>
+          <p>Washing Machine: 
+            <%= text_boolean(@properties.washing_machine) %>
           </p>
-          <p>Garage:
-            <%= @properties.attached_garage == false ? "No" : "Yes" %>
+          <p>Garage: 
+            <%= text_boolean(@properties.attached_garage) %>
           </p>
 
         <h3 class="border-bottom">Tax History</h3>
