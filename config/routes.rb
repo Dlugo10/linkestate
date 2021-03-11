@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :properties
 #     resources :favorites, only: [:index, :show, :create, :destroy]
 #     resources :tax_histories, only: [:show, :update, :create]
-#   end 
+#   end
 #   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

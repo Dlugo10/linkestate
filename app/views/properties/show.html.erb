@@ -1,8 +1,11 @@
+<%= link_to "All the Properties", properties_path, class: 'btn btn-primary btn-sm' %>
+
 <div class="container">
    <div class='row justify-content-center'>
-      <div class="col-6">  
+      <div class="col-6">
+
         <img src="https://source.unsplash.com/random" alt="..." width="300" height="300">
-          
+
         <h2 class="border-bottom"><%= @properties.title %></h2>
 
         <h3>$ <%= @properties.price %></h3>
@@ -24,25 +27,25 @@
           <p>Land Extension: <%= @properties.sq_meters_land %>m2</p>
 
         <h3 class="border-bottom">Amenities</h3>
-          <p>Beach Front: 
+          <p>Beach Front:
             <%= @properties.beachfront == false ? "No" : "Yes" %>
           </p>
-          <p>Water Front: 
+          <p>Water Front:
             <%= @properties.waterfront == false ? "No" : "Yes" %>
           </p>
-          <p>Pool: 
+          <p>Pool:
             <%= @properties.pool == false ? "No" : "Yes" %>
           </p>
-          <p>Central Air: 
+          <p>Central Air:
             <%= @properties.waterfront == false ? "No" : "Yes" %>
           </p>
-          <p>Dish Washer: 
+          <p>Dish Washer:
             <%= @properties.dishwasher == false ? "No" : "Yes" %>
           </p>
-          <p>Washing Machine: 
+          <p>Washing Machine:
             <%= @properties.washing_machine == false ? "No" : "Yes" %>
           </p>
-          <p>Garage: 
+          <p>Garage:
             <%= @properties.attached_garage == false ? "No" : "Yes" %>
           </p>
 
@@ -60,4 +63,8 @@
           <p>Based on the collection of data, the estimated price of <%= @properties.title %> is: $<%= @properties.estimated_price %></p>
     </div>
   </div>
-</div>  
+</div>
+
+<footer>
+  <%= link_to "Edit this apartment", edit_property_path, class: 'btn btn-success justify-content-center p-2 width-10' %>
+</footer>

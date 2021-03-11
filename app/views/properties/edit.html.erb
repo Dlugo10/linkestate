@@ -1,0 +1,36 @@
+<h1 class="border-bottom">Edit Property</h1>
+<div class="container-user-form">
+  <div class= 'divider'>
+    <div class='row justify-content-center'>
+      <div class="col-6">
+
+        <ul>
+
+          <%= simple_form_for [@property] do |f| %>
+          <li>
+            <%= f.input :title %>
+          </li>
+          <li>
+            <%= f.input :price, as: :integer %>
+          </li>
+          <li>
+            <%= f.input :address %>
+          </li>
+          <li>
+            <%= f.input :bedrooms %>
+          </li>
+          <li>
+            <%= f.input :bathrooms %>
+          </li>
+          <li>
+            <%= f.input :sq_meters %>
+          </li>
+          <li>
+            <%= f.submit %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
