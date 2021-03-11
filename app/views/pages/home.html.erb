@@ -1,16 +1,29 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>LinkEstate provides <strong>accurate</strong> data for <strong>accurate decisions</strong>!</h1>
-    <p>Search for Your Next Inversion.</p>
-    <div class="form-container">
-      <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.jetsetter.com/wp-content/uploads/sites/7/2018/04/LqE8GMoR-1380x690.jpeg);">
+  <div class="flex-container">
+    <h1>Using data to help you be a more infomed buyer or seller of your biggest asset</h1>
   </div>
+
+  <div class="search-bar">
+    <%= form_tag properties_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a home"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
+
+</div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Brought to you by the best Le Wagon Crew! <i class="fas fa-heart"></i> 
 </div>
