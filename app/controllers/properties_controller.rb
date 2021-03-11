@@ -1,6 +1,4 @@
 class PropertiesController < ApplicationController
-
-
   def index
     @properties = Property.all
   end
@@ -8,7 +6,7 @@ class PropertiesController < ApplicationController
   def show
     @properties = Property.find(params[:id])
   end
-  
+
   def new
     @property = Property.new
     # already coded the pundit authorizations, uncomment when enable pundit
@@ -40,7 +38,7 @@ class PropertiesController < ApplicationController
 
   private
 
-  def properties_params
+  def property_params
     params.require(:property).permit(:user_id, :price, :address, :city, :zip_code,
                                      :neighborhood_info, :neighborhood, :sq_meters,
                                      :estimated_price, :bedrooms, :bathrooms,
@@ -48,7 +46,7 @@ class PropertiesController < ApplicationController
                                      :sq_meters_added, :year_built, :year_renovated,
                                      :latitude, :longitude, :beachfront,
                                      :waterfront, :pool, :propery_type, :central_air,
-                                     :dishwasher, :washing_machine, :attached_garage, :title)
-
+                                     :dishwasher, :washing_machine, :attached_garage, :title
+                                     )
   end
 end
