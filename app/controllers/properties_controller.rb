@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
 
   def show
     @properties = Property.find(params[:id])
-
+  end
+  
   def new
     @property = Property.new
     # already coded the pundit authorizations, uncomment when enable pundit
