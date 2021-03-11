@@ -6,12 +6,10 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @properties = Property.find(params[:id])
+    @property = Property.find(params[:id])
 
   def new
     @property = Property.new
-    # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
   end
 
   def create
@@ -31,8 +29,6 @@ class PropertiesController < ApplicationController
 
   def update
     @property = Property.find(params[:id])
-    # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
     @property.update(property_params)
     redirect_to properties_path
   end
@@ -48,6 +44,6 @@ class PropertiesController < ApplicationController
                                      :latitude, :longitude, :beachfront,
                                      :waterfront, :pool, :propery_type, :central_air,
                                      :dishwasher, :washing_machine, :attached_garage, :title)
-
+    end
   end
 end
