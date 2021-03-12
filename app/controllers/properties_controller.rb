@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property)
 
       if params[:query].present?
         @properties = Property.search_by_address(params[:query])
@@ -28,13 +28,13 @@ class PropertiesController < ApplicationController
   def new
     @property = Property.new
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
   end
 
   def create
     @property = Property.new(property_params)
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
     @property.user = current_user
     @property.save
     redirect_to properties_path
@@ -43,13 +43,13 @@ class PropertiesController < ApplicationController
   def edit
     @property = Property.find(params[:id])
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
   end
 
   def update
     @property = Property.find(params[:id])
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
     @property.update(property_params)
     redirect_to properties_path
   end

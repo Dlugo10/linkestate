@@ -4,4 +4,20 @@ class PropertyPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def new?
+    true
+  end
+
+  def show?
+    true
+  end
+
+  def update?
+    user == record.user
+  end
+
+  def destroy?
+    user = record.user
+  end
 end
