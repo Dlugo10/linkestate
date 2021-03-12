@@ -2,7 +2,6 @@ class PropertiesController < ApplicationController
   def index
     @properties = policy_scope(Property).order(created_at: :desc)
 
-
       if params[:query].present?
         @properties = Property.search_by_address(params[:query])
         @markers = @properties.geocoded.map do |property|
