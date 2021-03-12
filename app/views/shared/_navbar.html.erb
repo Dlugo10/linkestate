@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
 
-    <h1 class="border-bottom">LinkEstate</h1>
+    <h1 class="border-bottom" style="color: white">LinkEstate</h1>
 
     <% end %>
 
@@ -14,20 +14,22 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Buy", properties_path, class: "nav-link" %>
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Home", root_path, class: "nav-link" %></p>
+        </li> 
+        <li class="nav-item">
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Buy", properties_path, class: "nav-link" %></p>
         </li>
         <li class="nav-item">
-          <%= link_to "Sell", new_property_path, class: "nav-link" %>
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Sell", new_property_path, class: "nav-link"%></p>
         </li>        
         <li class="nav-item">
-          <%= link_to "Manage Listings", properties_path, class: "nav-link" %>
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Real Estate", properties_path, class: "nav-link" %></p>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My Listings", properties_path, class: "dropdown-item" %>
-            <%= link_to "My Favorites", properties_path, class: "dropdown-item" %>
-            <%= link_to "Home", root_path, class: "dropdown-item" %>
+            <%# <%= link_to "My Favorites", property_favorites_path, class: "dropdown-item" %> 
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
