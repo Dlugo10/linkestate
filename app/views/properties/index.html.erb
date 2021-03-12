@@ -1,11 +1,11 @@
-<h1 class="border-bottom">This are all our properties</h1>
+<h1 class="border-bottom">To Implement a Search Bar</h1>
 <% if policy(Property).create? %>
   <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
 <% end %>
-
 <div class="properties-container">
-  <div class="row align-items-center">
-    <div class="col-3">
+   <div class="row align-items-top">
+        
+        <div class="map-container">
 
       <div id="map"
         style="width: 600px; height: 600px;"
@@ -48,10 +48,37 @@
               <% end %>
             <%end %>
             
+
           </div>
-        <% end %>
-      </ul>
+        </div>
+    
+        <div class="card-container">
+          <% @properties.each do |property| %>
+            <div class="card">
+              <%= link_to property_path(property) do %>
+                <div class="card-photo">
+                  <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h3>$ <%= property.price %></h3>
+                    <div class="property-facts-container">
+                      <h5><%= property.bedrooms %> beds </h5>
+                      <h5>&nbsp;&nbsp;<%= property.bathrooms %> baths </h5>
+                      <h5>&nbsp;&nbsp;<%= property.sq_meters %> sqm </h5>
+                    </div>
+                    <div class="property-facts-container">
+                      <h6><%= property.address %>,</h6>
+                      <h6>&nbsp;&nbsp;<%= property.city %></h6>
+                      <h6>&nbsp;&nbsp;<%= property.zip_code %></h6>
+                    </div>                      
+                      <p>Listing Agent(Add path to the listing agent index page): <%= property.user.first_name %></p>
+                </div>    
+              <%end %>
+            </div>
+          <% end %>
+        </div> 
+
     </div>
+
   </div>
 </div>
-
