@@ -1,6 +1,24 @@
 class PropertiesController < ApplicationController
   def index
     @properties = Property.all
+
+      if params[:query].present?
+        @properties = Property.search_by_address(params[:query])
+        @markers = @properties.geocoded.map do |property|
+          {
+            lat: property.latitude,
+            lng: property.longitude
+          }
+        end
+      else
+        @properties = Property.all
+        @markers = @properties.geocoded.map do |property|
+          {
+            lat: property.latitude,
+            lng: property.longitude
+          }
+        end
+    end
   end
 
   def show
