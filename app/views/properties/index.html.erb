@@ -1,5 +1,8 @@
 <h1 class="border-bottom">This are all our properties</h1>
-<%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %>
+<% if policy(Property).create? %>
+  <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
+<% end %>
+
 <div class="properties-container">
   <div class="row align-items-center">
     <div class="col-3">
