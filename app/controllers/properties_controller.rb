@@ -58,6 +58,13 @@ class PropertiesController < ApplicationController
     authorize @property
   end
 
+  def destroy
+    @property = Property.find(params[:id])
+    authorize @property
+    @property.destroy
+    redirect_to properties_path
+  end
+
   private
 
   def property_params
