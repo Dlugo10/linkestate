@@ -37,10 +37,21 @@
               <li>
                 <p>sqm: <%= property.sq_meters %></p>
               </li>
+              <% if property.favorites.where(user:current_user).count > 0 %>
+                <%if policy(Favorite).create? %>
+                  <%= link_to "", property_favorites_path(property), method: :post, class:"fas fa-heart" %>
+                <%end %>
+              <% else %>
+                <%if policy(Favorite).create? %>
+                  <%= link_to "", property_favorites_path(property), method: :post, class:"far fa-heart", remote: true%>
+                <%end %>
+              <% end %>
             <%end %>
+            
           </div>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+
