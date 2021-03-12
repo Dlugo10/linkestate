@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all
+    @properties = policy_scope(Property).order(created_at: :desc)
+
 
       if params[:query].present?
         @properties = Property.search_by_address(params[:query])
@@ -33,11 +34,11 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-    # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
     @property.user = current_user
     @property.save
     redirect_to properties_path
+
+    authorize @restaurant
   end
 
   def edit

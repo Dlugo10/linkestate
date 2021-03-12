@@ -6,9 +6,12 @@
 
         <img src="https://source.unsplash.com/random" alt="..." width="300" height="300">
 
+        <% @properties.each do |property| %>
+          <% if policy(property).edit? %>
+            <h5><%= link_to "Edit Property", edit_property_path(property) %></h5>
+          <% end %>
+        <% end %>
         
-        <h5><%= link_to "Edit Property", edit_property_path %></h5>
-
         <h2 class="border-bottom"><%= @properties.title %></h2>
 
         <h3>$ <%= @properties.price %></h3>
