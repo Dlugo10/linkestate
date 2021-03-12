@@ -9,6 +9,7 @@ User.destroy_all
 Property.destroy_all
 
 puts 'Creating 4 new Users'
+
 emails = ["alston@gmail.com", "matheus@gmail.com", "david@gmail.com"]
 titles = ["Big Blue House", "Nice and Spacious", "Luxury Home", "Cheap Offer", "Newst Rebuilt"]
 

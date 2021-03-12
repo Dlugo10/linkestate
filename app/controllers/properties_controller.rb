@@ -23,13 +23,15 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @properties = Property.find(params[:id])
+    @property = Property.find(params[:id])
+
+    authorize @property
   end
 
   def new
     @property = Property.new
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
   end
 
   def create
@@ -38,21 +40,22 @@ class PropertiesController < ApplicationController
     @property.save
     redirect_to properties_path
 
-    authorize @restaurant
+    authorize @property
   end
 
   def edit
     @property = Property.find(params[:id])
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
+    authorize @property
   end
 
   def update
     @property = Property.find(params[:id])
     # already coded the pundit authorizations, uncomment when enable pundit
-    # authorize @property
     @property.update(property_params)
     redirect_to properties_path
+
+    authorize @property
   end
 
   private

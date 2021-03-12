@@ -4,6 +4,10 @@ class PropertyPolicy < ApplicationPolicy
       scope.all
     end
   end
+  
+  def show?
+    true
+  end
 
   def create?
     return true
@@ -18,4 +22,5 @@ class PropertyPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+ 
 end
