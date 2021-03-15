@@ -17,6 +17,10 @@
                     <h6>&nbsp;&nbsp;<%= favorite.property.zip_code %></h6>
                   </div> 
   </div> 
+
+                    
+    <%= link_to "", property_favorite_path(favorite.property, favorite), method: :delete, class:"fas fa-heart heart-button", remote: true %>
+                    
   <% end %>
    
 </ul>

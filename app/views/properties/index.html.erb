@@ -54,8 +54,16 @@
               </div>    
             <%end %>
           </div>
+          <div>
+            <% if property.tax_histories.any? %>
+              <p>Tax History Timeline</p>
+              <%= line_chart property.tax_histories.to_line_chart, defer: true%>
+            <% end %>
+          </div>
         <% end %>
       </div> 
     </div>
   </div>
 </div>
+
+

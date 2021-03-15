@@ -1,5 +1,5 @@
-<% simple_form_for [@property, @tax_history] do |f| %>
-<%= f.input :year, as: :date, html5: true %>
+<%= simple_form_for [@property, @tax_history] do |f| %>
+<%= f.input :year, as: :string, html5: true %>
 <%= f.input :value %>
 <%= f.input :tax %>
 <%= f.submit "Submit Taxes", class: "btn btn-primary"  %>
