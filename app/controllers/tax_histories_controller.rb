@@ -29,6 +29,9 @@ class TaxHistoriesController < ApplicationController
 
   def update
     @tax_history = TaxHistory.find(params[:id])
+    authorize @tax_history
+    @tax_history.update(tax_history_params)
+    redirect_to property_path
   end
 
   private
