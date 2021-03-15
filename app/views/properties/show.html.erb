@@ -10,6 +10,10 @@
           <% if policy(@property).edit? %>
             <h5><%= link_to "Edit Property", edit_property_path(@property) %></h5>
           <% end %>
+
+           <% if policy(TaxHistory).create? %>
+            <h5><%= link_to "Tax History",  new_property_tax_history_path(@property) %></h5>
+          <% end %>
         
         <h2 class="border-bottom"><%= @property.title %></h2>
 
