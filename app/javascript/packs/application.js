@@ -31,7 +31,11 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initDynamicHeartButton } from '../plugins/init_heart';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initDynamicHeartButton();
+  
 })

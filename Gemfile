@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'geocoder'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
+gem 'pry', '~> 0.13.1'

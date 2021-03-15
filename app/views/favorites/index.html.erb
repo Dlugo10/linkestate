@@ -1,10 +1,22 @@
 <ul>
-
+  <h5>Saved Homes: <%= @favorites.count %></h5>
   <% @favorites.each do |favorite| %>
+  
+  
 
-  <%= favorite %>
-
+  <div class="card-body">
+                  <h3>$ <%= favorite.property.price %></h3>
+                  <div class="property-facts-container">
+                    <h5><%= favorite.property.bedrooms %> beds </h5>
+                    <h5>&nbsp;&nbsp;<%= favorite.property.bathrooms %> baths </h5>
+                    <h5>&nbsp;&nbsp;<%= favorite.property.sq_meters %> sqm </h5>
+                  </div>
+                  <div class="property-facts-container">
+                    <h6><%= favorite.property.address %>,</h6>
+                    <h6>&nbsp;&nbsp;<%= favorite.property.city %></h6>
+                    <h6>&nbsp;&nbsp;<%= favorite.property.zip_code %></h6>
+                  </div> 
+  </div> 
   <% end %>
-
-
+   
 </ul>

@@ -7,21 +7,21 @@ class FavoritesController < ApplicationController
 
   def create
     @property = Property.find(params[:property_id])
-    @favorite = Favorite.new
-    @favorite.user = current_user
-    property_saved = @favorite.property = @property
-    @favorite.save
-    @favorites_hash = Favorite.all
+    @favorites = current_user.favorites
     
-      @favorites_hash.each do |f|
+    
+    
+    if @favorites.present? && @favorites.find_by(property_id: @property.id).present?
+      @favorite = @favorites.find_by(property_id: @property.id).destroy
+      authorize @favorite
+    else    
+      @favorite = Favorite.create( user_id: current_user.id, property_id: @property.id)
+      authorize @favorite
+    end
+    
+    
 
-        if property_saved.id == f.property_id
-
-          property_saved.save!
-        end
-      end
-
-    authorize @favorite
+    
   end
 
 end
