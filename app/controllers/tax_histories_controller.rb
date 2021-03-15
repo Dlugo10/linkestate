@@ -1,11 +1,16 @@
 class TaxHistoriesController < ApplicationController
   def index
-    #Alston
+ 
+    @tax_histories = policy_scope(TaxHistory).order(created_at: :desc)
   end
 
-  def show
-    #Alston
-  end
+
+  def show 
+    
+    @tax_history = TaxHistory.find(params[:id])
+
+    authorize @tax_history
+
 
   def new
     #DAVID
