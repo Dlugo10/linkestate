@@ -4,12 +4,13 @@ class TaxHistoriesController < ApplicationController
     @tax_histories = policy_scope(TaxHistory).order(created_at: :desc)
   end
 
+
   def show 
     
     @tax_history = TaxHistory.find(params[:id])
 
     authorize @tax_history
-  end
+
 
   def new
     #DAVID
@@ -31,11 +32,15 @@ class TaxHistoriesController < ApplicationController
   end
 
   def edit
-# Matheus
+    @tax_history = TaxHistory.find(params[:id])
+    authorize @tax_history
   end
 
   def update
-# Matheus
+    @tax_history = TaxHistory.find(params[:id])
+    authorize @tax_history
+    @tax_history.update(tax_history_params)
+    redirect_to property_path
   end
 
   private
