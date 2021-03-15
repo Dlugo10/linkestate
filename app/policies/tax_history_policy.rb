@@ -4,8 +4,14 @@ class TaxHistoryPolicy < ApplicationPolicy
       scope.all
     end
   end
-
-  def create?
+  
+  def index?
     return true
   end
+
+  def create?
+    record.property.user == user
+  end
+
+
 end
