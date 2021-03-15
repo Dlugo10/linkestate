@@ -1,6 +1,6 @@
 <%= link_to "All the Properties", properties_path, class: 'btn btn-primary btn-sm' %>
 
-<div class="properties-container">
+<div class="show-properties-container">
    <div class='row justify-content-center'>
       <div class="col-6">
 
@@ -11,9 +11,7 @@
             <h5><%= link_to "Edit Property", edit_property_path(@property) %></h5>
           <% end %>
 
-           <% if policy(TaxHistory).create? %>
-            <h5><%= link_to "Tax History",  new_property_tax_history_path(@property) %></h5>
-          <% end %>
+           
         
         <h2 class="border-bottom"><%= @property.title %></h2>
 
@@ -60,7 +58,9 @@
           </p>
 
         <h3 class="border-bottom">Tax History</h3>
-          <p>tax history link per year</p>
+          <% if policy(@property.tax_histories.new).create? %>
+            <h5><%= link_to "Tax History",  property_tax_histories_path(@property.id) %></h5>
+          <% end %>
 
         <h3 class="border-bottom">Additional Information</h3>
           <p>Year Bought: <%= @property.year_bought %></p>
