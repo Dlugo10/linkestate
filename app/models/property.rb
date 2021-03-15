@@ -1,5 +1,5 @@
 class Property < ApplicationRecord
   belongs_to :user
 
-  has_many :tax_histories, dependent: :destroy
+  has_many :tax_histories
 end
