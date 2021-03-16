@@ -8,8 +8,7 @@ class FavoritesController < ApplicationController
   def create
     @property = Property.find(params[:property_id])
     @favorites = current_user.favorites
-    
-    
+  
     
     if @favorites.present? && @favorites.find_by(property_id: @property.id).present?
       @favorite = @favorites.find_by(property_id: @property.id).destroy

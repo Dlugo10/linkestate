@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "faker"
+
 User.destroy_all
 Property.destroy_all
 
@@ -28,19 +30,19 @@ titles = ["Big Blue House", "Nice and Spacious", "Luxury Home", "Cheap Offer", "
 end
 puts "Finished Users"
 
-puts 'Creating 10 new Properties'
+puts 'Creating 50 new Properties'
 
-10.times do 
+50.times do 
     
     property = Property.new(
 
     user_id: User.all.sample.id,
-    price: rand(100000..1000000),
-    address: ["Quito, Ecuador", "Guayas, Ecuador", "Quevedo, Ecuador", "Sucumbios, Ecuador"].sample,
-    city: ["Quito", 'Manabi', 'Guayaquil', 'Loja'].sample,
+    price: Faker::Address.postcode,
+    address: Faker::Address.full_address,
+    city: '',
     zip_code: rand(170700..170900),
-    neighborhood_info: "Lovely parks and churches around with a private school",
-    neighborhood: "Metropolitano",
+    neighborhood_info: Faker::Company.catch_phrase,
+    neighborhood: Faker::Address.community,
     sq_meters: rand(500..1000),
     bedrooms: rand(2..7),
     bathrooms: rand(2..7),
