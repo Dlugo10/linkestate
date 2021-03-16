@@ -1,18 +1,18 @@
 class PropertiesController < ApplicationController
   def index
-    @properties = policy_scope(Property).order(created_at: :desc)
 
     if params[:query].present?
-      @properties = Property.search_by_address(params[:query])
+      @properties = policy_scope(Property).search_by_address(params[:query]).paginate(page: params[:page], per_page: 6)
       @markers = @properties.geocoded.map do |property|
         {
           lat: property.latitude,
           lng: property.longitude
 
         }
+
       end
     else
-      @properties = Property.all
+      @properties = policy_scope(Property).paginate(page: params[:page], per_page: 6)
       @markers = @properties.geocoded.map do |property|
         {
           lat: property.latitude,

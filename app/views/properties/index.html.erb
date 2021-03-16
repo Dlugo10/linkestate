@@ -54,6 +54,8 @@
             <%end %>
           </div>
         <% end %>
+
+        <%= will_paginate(@properties, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg, text-center')  %>
       </div> 
     </div>
   </div>
