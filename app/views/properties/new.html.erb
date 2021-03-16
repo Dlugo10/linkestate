@@ -1,34 +1,57 @@
-<h1 class="border-bottom">New Property</h1>
+<h1 style="color:white" class="border-bottom">New Property</h1>
 <div class="container-user-form">
   <div class= 'divider'>
     <div class='row justify-content-center'>
-      <div class="col-6">
+      <div class="col-6" style="margin: 34px">
 
-        <ul>
+        <%= simple_form_for [@property] do |f| %>
+        
+          <%= f.input :title %>
+        
+          <%= f.input :price, as: :integer %>
+        
+          <%= f.input :address %>
+      
+          <%= f.input :bedrooms %>
+          <%= f.input :bathrooms %>
 
-          <%= simple_form_for [@property] do |f| %>
-          <li>
-            <%= f.input :title %>
-          </li>
-          <li>
-            <%= f.input :price, as: :integer %>
-          </li>
-          <li>
-            <%= f.input :address %>
-          </li>
-          <li>
-            <%= f.input :bedrooms %>
-          </li>
-          <li>
-            <%= f.input :bathrooms %>
-          </li>
-          <li>
-            <%= f.input :sq_meters %>
-          </li>
-          <li>
-            <%= f.submit %>
-          </li>
-        </ul>
+        
+          <h3 class="border-bottom"></h3>
+        
+        
+          <%= f.input :sq_meters %>
+        
+          <%= f.input :sq_meters_land %>
+        
+          <%= f.input :year_bought %>
+        
+          <%= f.input :price_bought %>
+        
+          <%= f.input :sq_meters_added %>
+        
+          <%= f.input :year_built %>
+        
+          <%= f.input :year_renovated %>
+        
+          <h3 class="border-bottom"></h3>
+        
+          <div class='booleans'>
+            <%= f.input :beachfront %>
+          
+            <%= f.input :waterfront %>
+        
+            <%= f.input :pool %>
+          
+            <%= f.input :central_air %>
+          
+            <%= f.input :dishwasher %>
+          
+            <%= f.input :washing_machine %>
+          
+            <%= f.input :attached_garage %>
+          </div>
+          
+          <div ><%= f.submit "Create Property", class:"btn btn-ghost"  %></div>
         <% end %>
       </div>
     </div>

@@ -8,6 +8,7 @@ class PropertiesController < ApplicationController
         {
           lat: property.latitude,
           lng: property.longitude
+
         }
       end
     else
@@ -52,7 +53,7 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
     # already coded the pundit authorizations, uncomment when enable pundit
     @property.update(property_params)
-    redirect_to properties_path
+    redirect_to property_path(@property.id)
 
     authorize @property
   end

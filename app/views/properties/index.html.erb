@@ -21,7 +21,7 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key = "pk.eyJ1IjoiZGF2aWRsdWdvMTAiLCJhIjoiY2tsMnBycGFvMGI2ajJucDdzeTc1bmg3diJ9.OIpMWRQo9NRtxDnU52PUmQ">
       </div>
-  
+
       <div class="card-container">
         <% @properties.each do |property| %>
           <div class="card">
@@ -50,7 +50,6 @@
                       <%= link_to "", property_favorites_path(property), method: :post, class:"far fa-heart heart-button", remote: true%>
                     <%end %>
                   <% end %>                     
-                    <p>Listing Agent(Add path to the listing agent index page): <%= property.user.first_name %></p>
               </div>    
             <%end %>
           </div>
@@ -59,3 +58,5 @@
     </div>
   </div>
 </div>
+
+
