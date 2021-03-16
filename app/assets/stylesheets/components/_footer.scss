@@ -1,11 +1,11 @@
 .footer {
-  background-image: linear-gradient(rgb(39, 47, 53), black );
+  background-image: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100px;
     padding: 0px 50px;
-    color: rgba(243, 243, 243, 0.3);
+    color: #006AFF;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -16,7 +16,7 @@
     align-items: center;
   }
   .footer-links a {
-    color: rgba(243, 243, 243, 0.932);
+    color: #006AFF;
     opacity: 0.15;
     text-decoration: none;
     font-size: 24px;
