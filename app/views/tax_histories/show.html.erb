@@ -1,0 +1,11 @@
+<%= link_to "All the Properties", properties_path, class: 'btn btn-primary btn-sm' %>
+
+<ul>
+  <% @tax_histories.each do |tax_history| %>
+      <div class="property-facts-container">
+          <h3><%= tax_history.property.year %></h3>
+          <h5><%= tax_history.property.value %></h5>
+          <h5>&nbsp;&nbsp;<%= tax_history.property.tax %></h5>
+      </div>
+  <% end %>
+</ul>
