@@ -1,26 +1,52 @@
-<ul>
-  <h5>Saved Homes: <%= @favorites.count %></h5>
-  <% @favorites.each do |favorite| %>
-  
-  
-
-  <div class="card-body">
-                  <h3>$ <%= favorite.property.price %></h3>
-                  <div class="property-facts-container">
-                    <h5><%= favorite.property.bedrooms %> beds </h5>
-                    <h5>&nbsp;&nbsp;<%= favorite.property.bathrooms %> baths </h5>
-                    <h5>&nbsp;&nbsp;<%= favorite.property.sq_meters %> sqm </h5>
-                  </div>
-                  <div class="property-facts-container">
-                    <h6><%= favorite.property.address %>,</h6>
-                    <h6>&nbsp;&nbsp;<%= favorite.property.city %></h6>
-                    <h6>&nbsp;&nbsp;<%= favorite.property.zip_code %></h6>
-                  </div> 
-  </div> 
-
-                    
-    <%= link_to "", property_favorite_path(favorite.property, favorite), method: :delete, class:"fas fa-heart heart-button", remote: true %>
-                    
+<div class="search-bar">
+  <%= form_tag properties_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find Real Estate"%>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-   
-</ul>
+</div>
+
+<% if policy(Property).create? %>
+  <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
+<% end %>
+ 
+
+<div class="properties-container">
+  <div class="row align-items-top">
+    <div class="map-container">
+
+      <div id="map"
+
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key = "pk.eyJ1IjoiZGF2aWRsdWdvMTAiLCJhIjoiY2tsMnBycGFvMGI2ajJucDdzeTc1bmg3diJ9.OIpMWRQo9NRtxDnU52PUmQ">
+      </div>
+    </div>
+    <div class="card-container">
+      <% @favorites.each do |favorite| %>
+        <div class="card">
+          <%= link_to property_path(favorite.property) do %>
+            <div class="card-photo">
+              <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+            </div>
+            <div class="card-body">
+                            <h3>$ <%= favorite.property.price %></h3>
+                            <div class="property-facts-container">
+                              <h5><%= favorite.property.bedrooms %> beds </h5>
+                              <h5>&nbsp;&nbsp;<%= favorite.property.bathrooms %> baths </h5>
+                              <h5>&nbsp;&nbsp;<%= favorite.property.sq_meters %> sqm </h5>
+                            </div>
+                            <div class="property-facts-container">
+                              <h6><%= favorite.property.address %>,</h6>
+                              <h6>&nbsp;&nbsp;<%= favorite.property.city %></h6>
+                              <h6>&nbsp;&nbsp;<%= favorite.property.zip_code %></h6>
+                            </div> 
+            </div>               
+            <%= link_to "", property_favorite_path(favorite.property, favorite), method: :delete, class:"fas fa-heart heart-button", remote: true %>
+          <%end %>
+        </div>             
+      <% end %>
+    </div>
+  </div>
+</div>
