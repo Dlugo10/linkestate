@@ -8,6 +8,7 @@ class PropertiesController < ApplicationController
         {
           lat: property.latitude,
           lng: property.longitude
+
         }
       end
     else
