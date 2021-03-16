@@ -1,5 +1,18 @@
 class Property < ApplicationRecord
   belongs_to :user
 
-  has_many :tax_histories
+
+  has_many :tax_histories, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+
+  geocoded_by :address 
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  include PgSearch::Model
+  pg_search_scope :search_by_address,
+    against: [ :address ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end

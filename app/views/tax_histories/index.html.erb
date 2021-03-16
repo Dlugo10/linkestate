@@ -1,0 +1,80 @@
+<<<<<<< HEAD
+<div class="border-bottom">
+  <div class="search-bar">
+    <%= form_tag properties_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find Real Estate"%>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>  
+<% if policy(Property).create? %>
+  <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
+<% end %>
+<div class="properties-container">
+  <div class="row align-items-top">
+    <div class="map-container">
+
+      <div id="map"
+        style="width: 600px; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key = "pk.eyJ1IjoiZGF2aWRsdWdvMTAiLCJhIjoiY2tsMnBycGFvMGI2ajJucDdzeTc1bmg3diJ9.OIpMWRQo9NRtxDnU52PUmQ">
+      </div>
+  
+      <div class="card-container">
+        <% @properties.each do |property| %>
+          <div class="card">
+            <%= link_to property_path(property) do %>
+              <div class="card-photo">
+                <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+              </div>
+              <div class="card-body">
+                  <h3>$ <%= property.price %></h3>
+                  <div class="property-facts-container">
+                    <h5><%= property.bedrooms %> beds </h5>
+                    <h5>&nbsp;&nbsp;<%= property.bathrooms %> baths </h5>
+                    <h5>&nbsp;&nbsp;<%= property.sq_meters %> sqm </h5>
+                  </div>
+                  <div class="property-facts-container">
+                    <h6><%= property.address %>,</h6>
+                    <h6>&nbsp;&nbsp;<%= property.city %></h6>
+                    <h6>&nbsp;&nbsp;<%= property.zip_code %></h6>
+                  </div> 
+                  <% if property.favorites.where(user:current_user).count > 0 %>
+                    <%if policy(Favorite).create? %>
+                      <%= link_to "", property_favorites_path(property), method: :post, class:"fas fa-heart heart-button" %>
+                    <%end %>
+                  <% else %>
+                    <%if policy(Favorite).create? %>
+                      <%= link_to "", property_favorites_path(property), method: :post, class:"far fa-heart heart-button", remote: true%>
+                    <%end %>
+                  <% end %>                     
+                    <p>Listing Agent(Add path to the listing agent index page): <%= property.user.first_name %></p>
+              </div>    
+            <%end %>
+          </div>
+        <% end %>
+      </div> 
+    </div>
+  </div>
+</div>
+=======
+<%# <div class="user_forms_container"> %>
+  <div class='row justify-content-center'>
+    <div class="col-6"> 
+      <div>
+        <h5 style="margin:34px">Tax History Timeline</h5>
+        <div style="width:70%"><%= line_chart @property.tax_histories.to_line_chart, defer: true%></div>
+      </div>
+      
+    </div>
+    <% if policy(@property.tax_histories.new).create? %>
+      <div><%= link_to 'Input Taxes', new_property_tax_history_path(params[:property_id]), class:"btn btn-ghost", style:"margin-top: 20px" %> </div> 
+    <% end %>
+  <%# <%= link_to 'Update Values', edit_property_tax_history_path(@property.tax_histories, @property ) %> 
+
+  </div>
+</div>
+>>>>>>> df6937e2d65cb49b44c89ad81bb7f93a17bcbd31
