@@ -1,14 +1,13 @@
-<div class="border-bottom">
-  <div class="search-bar">
-    <%= form_tag properties_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find Real Estate"%>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>  
+<div class="search-bar">
+  <%= form_tag properties_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find Real Estate"%>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 <% if policy(Property).create? %>
   <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
 <% end %>
