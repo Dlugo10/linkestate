@@ -3,13 +3,21 @@ class FavoritesController < ApplicationController
   def index
     @favorites = policy_scope(Favorite).order(created_at: :desc)
 
+    @markers = @favorites.map(&:property).map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude
+
+      }
+
+    end
+
   end
 
   def create
     @property = Property.find(params[:property_id])
     @favorites = current_user.favorites
-    
-    
+  
     
     if @favorites.present? && @favorites.find_by(property_id: @property.id).present?
       @favorite = @favorites.find_by(property_id: @property.id).destroy
