@@ -3,7 +3,7 @@ class TaxHistoriesController < ApplicationController
     #Alston
   end
 
-  def show 
+  def show
     #Alston
   end
 
