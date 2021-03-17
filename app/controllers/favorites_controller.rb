@@ -3,6 +3,15 @@ class FavoritesController < ApplicationController
   def index
     @favorites = policy_scope(Favorite).order(created_at: :desc)
 
+    @markers = @favorites.map(&:property).map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude
+
+      }
+
+    end
+
   end
 
   def create
