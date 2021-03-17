@@ -1,6 +1,7 @@
 class Property < ApplicationRecord
   belongs_to :user
 
+
   has_many :tax_histories, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
@@ -13,4 +14,5 @@ class Property < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
 end

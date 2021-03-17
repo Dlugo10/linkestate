@@ -65,3 +65,9 @@ gem 'geocoder'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'pry', '~> 0.13.1'
+
+gem "chartkick"
+gem 'groupdate'
+
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate'

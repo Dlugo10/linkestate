@@ -1,33 +1,48 @@
 class TaxHistoriesController < ApplicationController
+
   def index
-    #Alston
-  end
+    @property = Property.find(params[:property_id])
+    @tax_history = policy_scope(TaxHistory).order(created_at: :desc)
+
 
   def show
     #Alston
+    authorize @tax_history
   end
+
 
   def new
     #DAVID
+    @property = Property.find(params[:property_id])
     @tax_history = TaxHistory.new
+    @tax_history.property = @property
 
+    authorize @tax_history
   end
 
   def create
     #DAVID
-    @tax_histories = TaxHistory.new(tax_history_params)
-    @tax_histories.save
+    @property = Property.find(params[:property_id])
+    @tax_history = TaxHistory.new(tax_history_params)
+    @tax_history.property = @property
+    @tax_history.save
 
-    redirect_to property_tax_histories_path(:property_id)
+    authorize @tax_history
+    redirect_to  property_tax_histories_path(params[:property_id])
 
   end
 
   def edit
-# Matheus
+    @property = Property.find(params[:property_id])
+    @tax_history = TaxHistory.find(params[:id])
+    authorize @tax_history
   end
 
   def update
-# Matheus
+    @tax_history = TaxHistory.find(params[:id])
+    authorize @tax_history
+    @tax_history.update(tax_history_params)
+    redirect_to property_path
   end
 
   private
