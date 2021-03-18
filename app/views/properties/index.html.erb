@@ -1,11 +1,291 @@
-<div class="search-bar">
-  <%= form_tag properties_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find Real Estate"%>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<div class="filter-container">
+
+  <div class="search-bar">
+    <%= form_tag properties_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find Real Estate"%>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <form>
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="prop_type">Property Type</label>
+          <select class="Home-searchRangeSelect jsPriceSelect" id="prop_type" name="prop_type" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="House">House</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Condo">Condo</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Multifamily">Multifamily</option>
+                <option value="Land">Land</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var type = document.getElementById('prop_type');
+              if (localStorage['prop_type']) { // if job is set
+                  type.value = localStorage['prop_type']; // set the value
+              }
+              type.onchange = function () {
+                    localStorage['prop_type'] = this.value; // change localStorage on change
+                }
+            console.log(type.value);
+            });
+          </script>
+      </div>
+
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="price_from">Minimum Price</label>
+          <select id="price_from" class="Home-searchRangeSelect jsPriceSelect" name="price_from" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="100000">$100,000</option>
+                <option value="150000">$150,000</option>
+                <option value="200000">$200,000</option>
+                <option value="250000">$250,000</option>
+                <option value="300000">$300,000</option>
+                <option value="400000">$400,000</option>
+                <option value="500000">$500,000</option>
+                <option value="600000">$600,000</option>
+                <option value="700000">$700,000</option>
+                <option value="750000">$750,000</option>
+                <option value="800000">$800,000</option>
+                <option value="900000">$900,000</option>
+                <option value="1000000">$1,000,000</option>
+                <option value="1250000">$1,250,000</option>
+                <option value="1500000">$1,500,000</option>
+                <option value="1750000">$1,750,000</option>
+                <option value="2000000">$2,000,000</option>
+                <option value="2250000">$2,250,000</option>
+                <option value="2500000">$2,500,000</option>
+                <option value="2750000">$2,750,000</option>
+                <option value="3000000">$3,000,000</option>
+                <option value="3500000">$3,500,000</option>
+                <option value="4000000">$4,000,000</option>
+                <option value="4500000">$4,500,000</option>
+                <option value="5000000">$5,000,000</option>
+                <option value="6000000">$6,000,000</option>
+                <option value="7000000">$7,000,000</option>
+                <option value="8000000">$8,000,000</option>
+                <option value="9000000">$9,000,000</option>
+                <option value="10000000">$10,000,000</option>
+                <option value="12000000">$12,000,000</option>
+                <option value="14000000">$14,000,000</option>
+                <option value="16000000">$16,000,000</option>
+                <option value="20000000">$20,000,000</option>
+                <option value="25000000">$25,000,000</option>
+                <option value="30000000">$30,000,000</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var min_price = document.getElementById('price_from');
+              if (localStorage['price_from']) { // if job is set
+                  min_price.value = localStorage['price_from']; // set the value
+
+              }
+              min_price.onchange = function () {
+                    localStorage['price_from'] = this.value; // change localStorage on change
+                }
+            console.log(min_price.value);
+            });
+          </script>
+      </div>
+
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="price_to">Maximum Price</label>
+          <select class="Home-searchRangeSelect jsPriceSelect" id="price_to" name="price_to" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="100000">$100,000</option>
+                <option value="150000">$150,000</option>
+                <option value="200000">$200,000</option>
+                <option value="250000">$250,000</option>
+                <option value="300000">$300,000</option>
+                <option value="400000">$400,000</option>
+                <option value="500000">$500,000</option>
+                <option value="600000">$600,000</option>
+                <option value="700000">$700,000</option>
+                <option value="750000">$750,000</option>
+                <option value="800000">$800,000</option>
+                <option value="900000">$900,000</option>
+                <option value="1000000">$1,000,000</option>
+                <option value="1250000">$1,250,000</option>
+                <option value="1500000">$1,500,000</option>
+                <option value="1750000">$1,750,000</option>
+                <option value="2000000">$2,000,000</option>
+                <option value="2250000">$2,250,000</option>
+                <option value="2500000">$2,500,000</option>
+                <option value="2750000">$2,750,000</option>
+                <option value="3000000">$3,000,000</option>
+                <option value="3500000">$3,500,000</option>
+                <option value="4000000">$4,000,000</option>
+                <option value="4500000">$4,500,000</option>
+                <option value="5000000">$5,000,000</option>
+                <option value="6000000">$6,000,000</option>
+                <option value="7000000">$7,000,000</option>
+                <option value="8000000">$8,000,000</option>
+                <option value="9000000">$9,000,000</option>
+                <option value="10000000">$10,000,000</option>
+                <option value="12000000">$12,000,000</option>
+                <option value="14000000">$14,000,000</option>
+                <option value="16000000">$16,000,000</option>
+                <option value="20000000">$20,000,000</option>
+                <option value="25000000">$25,000,000</option>
+                <option value="30000000">$30,000,000</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var max_price = document.getElementById('price_to');
+              if (localStorage['price_to']) { // if job is set
+                  max_price.value = localStorage['price_to']; // set the value
+              }
+              max_price.onchange = function () {
+                    localStorage['price_to'] = this.value; // change localStorage on change
+                }
+            console.log(max_price.value);
+            });
+          </script>
+      </div>
+
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_size">Minimum SQM</label>
+          <select class="Home-searchRangeSelect jsPriceSelect" id="min_size" name="min_size" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="0">0</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="150">150</option>
+                <option value="200">200</option>
+                <option value="250">250</option>
+                <option value="300">300</option>
+                <option value="350">350</option>
+                <option value="400">400</option>
+                <option value="450">450</option>
+                <option value="500">500</option>
+                <option value="550">550</option>
+                <option value="600">600</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var min_sqm = document.getElementById('min_size');
+              if (localStorage['min_size']) { // if job is set
+                  min_sqm.value = localStorage['min_size']; // set the value
+
+              }
+              min_sqm.onchange = function () {
+                    localStorage['min_size'] = this.value; // change localStorage on change
+                }
+            console.log(min_sqm.value);
+            });
+          </script>
+      </div>
+
+
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_bed">Minimum Bedrooms</label>
+          <select class="Home-searchRangeSelect jsPriceSelect" id="min_bed" name="min_bed" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var min_beds = document.getElementById('min_bed');
+              if (localStorage['min_bed']) { // if job is set
+                  min_beds.value = localStorage['min_bed']; // set the value
+
+              }
+              min_beds.onchange = function () {
+                    localStorage['min_bed'] = this.value; // change localStorage on change
+                }
+            console.log(min_beds.value);
+            });
+          </script>
+      </div>
+
+      <div class="Home-searchRangeInput">
+        <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_bath">Minimum Bathrooms</label>
+          <select class="Home-searchRangeSelect jsPriceSelect" id="min_bath" name="min_bath" se:behavior="support_custom_value" data-nochangeonload="">
+                <option value="">Any</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+          </select>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var min_baths = document.getElementById('min_bath');
+              if (localStorage['min_bath']) { // if job is set
+                  min_baths.value = localStorage['min_bath']; // set the value
+
+              }
+              min_baths.onchange = function () {
+                    localStorage['min_bath'] = this.value; // change localStorage on change
+                }
+            console.log(min_baths.value);
+            });
+          </script>
+      </div>
+
+
+      <fieldset class="u-noBorder u-noMargin u-noPadding u-width--full">
+        <legend class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary">Features</legend>
+        <div class="CheckboxGroup Home-searchBedsSelects jsBedsSelection">
+              <input id="search_waterfront" class="CheckboxGroup-input jsBedsInput" value="<1" type="checkbox">
+              <label class="CheckboxGroup-label Home-searchBedsLabel" for="search_waterfront">
+                <span class="CheckboxGroup-copy">Waterfront</span>
+              </label>
+              <input id="search-1" class="CheckboxGroup-input jsBedsInput" value="1" type="checkbox">
+              <label class="CheckboxGroup-label Home-searchBedsLabel" for="search-1">
+                <span class="CheckboxGroup-copy">Beachfront</span>
+              </label>
+              <input id="search-2" class="CheckboxGroup-input jsBedsInput" value="2" type="checkbox">
+              <label class="CheckboxGroup-label Home-searchBedsLabel" for="search-2">
+                <span class="CheckboxGroup-copy">Pool</span>
+              </label>
+              <input id="search-3" class="CheckboxGroup-input jsBedsInput" value="3" type="checkbox">
+              <label class="CheckboxGroup-label Home-searchBedsLabel" for="search-3">
+                <span class="CheckboxGroup-copy">Air Conditioned</span>
+              </label>
+              <input id="search-4+" class="CheckboxGroup-input jsBedsInput" value=">=4" type="checkbox">
+              <label class="CheckboxGroup-label Home-searchBedsLabel" for="search-4+">
+                <span class="CheckboxGroup-copy">Washer / Dryer</span>
+              </label>
+        </div>
+          
+          <%# <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var waterfront = document.getElementById('search_waterfront');
+              if (localStorage['search_waterfront']) { // if job is set
+                  waterfront.value = localStorage['search_waterfront']; // set the value
+              }
+              waterfront.onchange = function () {
+                    localStorage['search_waterfront'] = this.value; // change localStorage on change
+                }
+            console.log(waterfront.value*-1);
+            });
+          </script> %>
+
+      </fieldset>
+      <%= submit_tag "Search", class: "btn btn-info" %>
+  </form>
+
 </div>
 
 <% if policy(Property).create? %>
@@ -23,6 +303,7 @@
       </div>
     </div>
       <div class="card-container">
+
         <% @properties.each do |property| %>
           <div class="card">
             <%= link_to property_path(property) do %>
