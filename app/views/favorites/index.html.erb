@@ -1,5 +1,5 @@
 <div class="search-bar">
-  <%= form_tag properties_path, method: :get do %>
+  <%= form_tag properties_path, method: :get, 'data-turbolinks': false  do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
