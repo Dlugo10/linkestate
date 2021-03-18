@@ -81,7 +81,8 @@ class PropertiesController < ApplicationController
                                      :sq_meters_added, :year_built, :year_renovated,
                                      :latitude, :longitude, :beachfront,
                                      :waterfront, :pool, :propery_type, :central_air,
-                                     :dishwasher, :washing_machine, :attached_garage, :title
+                                     :dishwasher, :washing_machine, :attached_garage, 
+                                     :title, photos: []
                                      )
   end
 end
