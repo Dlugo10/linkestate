@@ -1,6 +1,5 @@
 class PropertiesController < ApplicationController
   def index
-
     if params[:query].present?
       @properties = policy_scope(Property).search_by_address(params[:query]).paginate(page: params[:page], per_page: 6)
       @markers = @properties.geocoded.map do |property|
@@ -13,6 +12,13 @@ class PropertiesController < ApplicationController
       end
     else
       @properties = policy_scope(Property).paginate(page: params[:page], per_page: 6)
+      @properties=@properties.where(propery_type: params[:prop_type]) if params[:prop_type].present? # filters property type
+      @properties=@properties.where("price >= ?", params[:price_from]) if params[:price_from].present? # filters min price
+      @properties=@properties.where("price <= ?", params[:price_to]) if params[:price_to].present? # filters max price
+      @properties=@properties.where("bathrooms >= ?", params[:min_bath]) if params[:min_bath].present? # filters min bathrooms
+      @properties=@properties.where("bedrooms >= ?", params[:min_bed]) if params[:min_bed].present?    # filters min bedrooms
+      @properties=@properties.where("sq_meters >= ?", params[:min_size]) if params[:min_size].present? # filters min square meter size
+
       @markers = @properties.geocoded.map do |property|
         {
           lat: property.latitude,

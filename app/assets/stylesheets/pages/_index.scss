@@ -85,3 +85,28 @@ h1 {
   align-items: center;
   justify-content:left;
 }
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Home-searchRangeSelect {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  background-color: #FFF;
+  border: 1px solid #CDCDCD;
+  border-radius: 0;
+  color: #1A1F2C;
+  cursor: pointer;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  line-height: 38px;
+  outline: none;
+  padding: 0 15px;
+  transition: color 200ms;
+  width: 100%;
+}
