@@ -40,3 +40,4 @@ document.addEventListener('turbolinks:load', () => {
   initDynamicHeartButton();
   
 })
+
