@@ -49,7 +49,9 @@
           
             <%= f.input :attached_garage %>
           </div>
-          
+
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            
           <div ><%= f.submit "Create Property", class:"btn btn-ghost"  %></div>
         <% end %>
       </div>
