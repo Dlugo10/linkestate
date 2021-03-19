@@ -199,12 +199,22 @@ PGEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+<<<<<<< HEAD
     ruby_linear_regression (0.1.5)
+=======
+
+    ruby_linear_regression (0.1.5)
+
+>>>>>>> 2d3abda1390c41d5da104be430ae98aff8f20f73
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d3abda1390c41d5da104be430ae98aff8f20f73
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
