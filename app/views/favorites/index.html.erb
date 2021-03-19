@@ -28,7 +28,11 @@
         <div class="card">
           <%= link_to property_path(favorite.property) do %>
             <div class="card-photo">
-              <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+                <% if favorite.property.photos.any? %>
+                  <%= cl_image_tag favorite.property.photos.first.key, class: "card-img-top" %>
+                <%else%>        
+                  <img , class="card-img-top", src="https://source.unsplash.com/random" alt="Card image cap">
+                <%end%>
             </div>
             <div class="card-body">
                             <h3>$ <%= favorite.property.price %></h3>
