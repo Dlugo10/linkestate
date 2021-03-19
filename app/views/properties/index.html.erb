@@ -294,15 +294,8 @@
 
 <div class="properties-container">
   <div class="row align-items-top">
-    <div class="map-container">
 
-      <div id="map"
-
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key = "pk.eyJ1IjoiZGF2aWRsdWdvMTAiLCJhIjoiY2tsMnBycGFvMGI2ajJucDdzeTc1bmg3diJ9.OIpMWRQo9NRtxDnU52PUmQ">
-      </div>
-    </div>
-      <div class="card-container">
+        <div class="card-container">
 
         <% @properties.each do |property| %>
           <div class="card">
@@ -342,6 +335,17 @@
 
         <%= will_paginate(@properties, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg, text-center')  %>
       </div> 
+
+    <div class="map-container">
+
+      <div id="map"
+
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key = "pk.eyJ1IjoiZGF2aWRsdWdvMTAiLCJhIjoiY2tsMnBycGFvMGI2ajJucDdzeTc1bmg3diJ9.OIpMWRQo9NRtxDnU52PUmQ">
+      </div>
+    </div>
+
+
     </div>
   </div>
 </div>

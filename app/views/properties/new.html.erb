@@ -16,6 +16,9 @@
           <%= f.input :price, as: :integer %>
         
           <%= f.input :address %>
+
+          <%= f.input :propery_type, :collection => %w[Condo House Apartment Town House] %>
+          
       
           <%= f.input :bedrooms %>
           <%= f.input :bathrooms %>
