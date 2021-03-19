@@ -1,5 +1,5 @@
-<div class="filter-container">
-
+<div class="container">
+ </div>
   <div class="search-bar">
     <%= form_tag properties_path, method: :get do %>
       <%= text_field_tag :query,
@@ -10,10 +10,11 @@
     <% end %>
   </div>
 
-  <form>
+<div>
+  <form class='filter-form'>
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="prop_type">Property Type</label>
-          <select class="Home-searchRangeSelect jsPriceSelect" id="prop_type" name="prop_type" se:behavior="support_custom_value" data-nochangeonload="">
+          <select class="Home-searchRangeSelect jsPriceSelect" style="border-radius: 28px" id="prop_type" name="prop_type" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="House">House</option>
                 <option value="Townhouse">Townhouse</option>
@@ -39,7 +40,7 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="price_from">Minimum Price</label>
-          <select id="price_from" class="Home-searchRangeSelect jsPriceSelect" name="price_from" se:behavior="support_custom_value" data-nochangeonload="">
+          <select id="price_from" style="border-radius: 28px" class="Home-searchRangeSelect jsPriceSelect" name="price_from" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="100000">$100,000</option>
                 <option value="150000">$150,000</option>
@@ -96,7 +97,7 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="price_to">Maximum Price</label>
-          <select class="Home-searchRangeSelect jsPriceSelect" id="price_to" name="price_to" se:behavior="support_custom_value" data-nochangeonload="">
+          <select class="Home-searchRangeSelect jsPriceSelect" style="border-radius: 28px" id="price_to" name="price_to" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="100000">$100,000</option>
                 <option value="150000">$150,000</option>
@@ -152,7 +153,7 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_size">Minimum SQM</label>
-          <select class="Home-searchRangeSelect jsPriceSelect" id="min_size" name="min_size" se:behavior="support_custom_value" data-nochangeonload="">
+          <select class="Home-searchRangeSelect jsPriceSelect" style="border-radius: 28px" id="min_size" name="min_size" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="0">0</option>
                 <option value="50">50</option>
@@ -187,7 +188,7 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_bed">Minimum Bedrooms</label>
-          <select class="Home-searchRangeSelect jsPriceSelect" id="min_bed" name="min_bed" se:behavior="support_custom_value" data-nochangeonload="">
+          <select class="Home-searchRangeSelect jsPriceSelect" style="border-radius: 28px" id="min_bed" name="min_bed" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -216,7 +217,8 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="min_bath">Minimum Bathrooms</label>
-          <select class="Home-searchRangeSelect jsPriceSelect" id="min_bath" name="min_bath" se:behavior="support_custom_value" data-nochangeonload="">
+          <select class="Home-searchRangeSelect jsPriceSelect" 
+    style="border-radius: 28px" id="min_bath" name="min_bath" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -283,10 +285,10 @@
           </script> %>
 
       </fieldset>
-      <%= submit_tag "Search", class: "btn btn-info" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
   </form>
-
 </div>
+
 
 <div class="properties-container">
   <div class="row align-items-top">
@@ -295,7 +297,7 @@
 
         <% @properties.each do |property| %>
           <div class="card">
-            <%= link_to property_path(property) do %>
+            <%= link_to property_path(property), style:'text-decoration:none; color:black' do %>
               <div class="card-photo">
                 <% if property.photos.any? %>
                   <%= cl_image_tag property.photos.first.key, class: "card-img-top" %>
@@ -304,11 +306,11 @@
                 <%end%>
               </div>
               <div class="card-body">
-                  <h3>$ <%= property.price %></h3>
+                  <h3 style="text-decoration: none">$ <%= property.price %></h3>
                   <div class="property-facts-container">
-                    <h5><%= property.bedrooms %> beds </h5>
-                    <h5>&nbsp;&nbsp;<%= property.bathrooms %> baths </h5>
-                    <h5>&nbsp;&nbsp;<%= property.sq_meters %> sqm </h5>
+                    <h5 style="text-decoration: none"><%= property.bedrooms %> beds </h5>
+                    <h5 style="text-decoration: none">&nbsp;&nbsp;<%= property.bathrooms %> baths </h5>
+                    <h5 style="text-decoration: none;">&nbsp;&nbsp;<%= property.sq_meters %> sqm </h5>
                   </div>
                   <div class="property-facts-container">
                     <h6><%= property.address %>,</h6>
@@ -328,9 +330,8 @@
             <%end %>
           </div>
         <% end %>
-
         <%= will_paginate(@properties, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg, text-center')  %>
-      </div> 
+   </div>
 
     <div class="map-container">
 

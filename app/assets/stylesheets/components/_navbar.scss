@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-image: linear-gradient(rgb(39, 48, 71), rgb(84, 95, 121));
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240));
   position: sticky;
   top: 0;
   width: 100%;
@@ -16,14 +16,14 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
+  color: rgb(39, 39, 39);
   font-weight:bolder;
   margin-right: 5px;
   margin-left: 5px;
  
 
   &:hover {
-    color: white;
+    color: black;
     font-weight: 700;
   }
 }
