@@ -72,3 +72,6 @@ gem 'groupdate'
 gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
 gem 'faker'
+
+gem "ruby_linear_regression"
+gem 'nokogiri'

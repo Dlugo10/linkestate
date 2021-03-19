@@ -30,6 +30,7 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+    @estimated_value = @property.estimated_value
 
     authorize @property
   end
