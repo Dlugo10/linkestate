@@ -18,7 +18,13 @@ class PropertiesController < ApplicationController
       @properties=@properties.where("bathrooms >= ?", params[:min_bath]) if params[:min_bath].present? # filters min bathrooms
       @properties=@properties.where("bedrooms >= ?", params[:min_bed]) if params[:min_bed].present?    # filters min bedrooms
       @properties=@properties.where("sq_meters >= ?", params[:min_size]) if params[:min_size].present? # filters min square meter size
+      @properties=@properties.where(waterfront: params[:search_waterfront]) if params[:search_waterfront].present? # waterfront
+      @properties=@properties.where(beachfront: params[:search_beachfront]) if params[:search_beachfront].present? # beachfront
+      @properties=@properties.where(pool: params[:search_pool]) if params[:search_pool].present? # pool      
+      @properties=@properties.where(central_air: params[:search_ac]) if params[:search_ac].present? # ac
+      @properties=@properties.where(washing_machine: params[:search_wd]) if params[:search_wd].present? # washer dryer
 
+      
       @markers = @properties.geocoded.map do |property|
         {
           lat: property.latitude,
