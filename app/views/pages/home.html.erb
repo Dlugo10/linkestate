@@ -1,6 +1,7 @@
 <div class="banner" style="background-image: url(https://res.cloudinary.com/atc5nc/image/upload/v1615904510/LinkEstate/24928-malibu-road-malibu-ca-usa-8-EXT_dihtel.jpg);">
   <div class="flex-container">
-    <h1>Using data to help you become a more infomed buyer or seller of your biggest asset!</h1>
+  <h2>LinkEstate</h2>
+    <p>Using <strong>data</strong> to help you become a more <strong>infomed buyer</strong> or seller of your biggest asset!</p>
   </div>
 
   <div class="search-bar">
@@ -15,24 +16,29 @@
 </div>
 
 <div class="guide-container">
-  <div class="card text-center" id="buy-sell-card" style="width: 36rem;">
-  <img class="card-img-top" src="https://res.cloudinary.com/atc5nc/image/upload/v1615909148/LinkEstate/home-sale-in-spring-e1486493774727_tui7pf.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Sell Your Home!</h5>
-      <p class="card-text">Whether listing the property yourself or using an agent, we can help you navigate a successful sale.</p>
-      <a> <%= link_to "List Your Home", new_property_path, class: 'btn btn-outline-primary' %> </a>
-    </div>
-  </div>
-  <div class="card text-center" id="buy-sell-card" style="width: 36rem;">
-  <img class="card-img-top" src="https://res.cloudinary.com/atc5nc/image/upload/v1615909175/LinkEstate/house-sold-sign-drawing-photo-white-custom-real-estate-combination-50582610_jwvdbt.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Buy A Home!</h5>
-      <p class="card-text">Find your place with an immersive photo experience and the most listings, including things you won't find anywhere else.</p>
-      <a> <%= link_to "Search Homes", properties_path, class: 'btn btn-outline-primary' %> </a>
-    </div>
-  </div>  
-</div>
+  <%= link_to new_property_path do %>
 
+    <div class="card text-center" id="buy-sell-card" style="width: 36rem;">
+    <img class="card-img-top" src="https://res.cloudinary.com/atc5nc/image/upload/v1615909148/LinkEstate/home-sale-in-spring-e1486493774727_tui7pf.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Sell Your Home!</h5>
+        <p class="card-text">Whether listing the property yourself or using an agent, we can help you navigate a successful sale.</p>
+      </div>
+    </div>      
+  <% end %>
+
+  <%= link_to properties_path do %> 
+
+    <div class="card text-center" id="buy-sell-card" style="width: 36rem">
+    <img class="card-img-top" src="https://res.cloudinary.com/atc5nc/image/upload/v1615909175/LinkEstate/house-sold-sign-drawing-photo-white-custom-real-estate-combination-50582610_jwvdbt.jpg" alt="Card image cap">
+      <div class="card-body" style="text-decoration: none">
+        <h5 class="card-title">Buy A Home!</h5>
+        <p class="card-text">Find your place with an immersive photo experience and the most listings, including things you won't find anywhere else.</p>
+      </div>
+    </div>  
+
+  <% end %>
+</div>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
