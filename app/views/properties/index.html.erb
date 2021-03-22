@@ -309,7 +309,7 @@
                 <%end%>
               </div>
               <div class="card-body">
-                  <h3 style="text-decoration: none">$ <%= property.price %></h3>
+                  <h3 style="text-decoration: none">$ <%= number_with_delimiter(property.price, :delimiter => ',') %></h3>
                   <div class="property-facts-container">
                     <h5 style="text-decoration: none"><%= property.bedrooms %> beds </h5>
                     <h5 style="text-decoration: none">&nbsp;&nbsp;<%= property.bathrooms %> baths </h5>

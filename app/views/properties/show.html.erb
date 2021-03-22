@@ -39,7 +39,7 @@
         
         <h2 class="border-bottom", style="margin-top:20px"><%= @property.title %></h2>
 
-        <h3>$ <%= @property.price %></h3>
+        <h3>$ <%= number_with_delimiter(@property.price, :delimiter => ',') %></h3>
         <p>Property Type: <%= @property.propery_type %></p>
         <p>Bedrooms: <%= @property.bedrooms %></p>
 
@@ -88,7 +88,7 @@
 
         <h3 class="border-bottom", style="margin-top:20px">Additional Information</h3>
           <p>Year Bought: <%= @property.year_bought %></p>
-          <p>Price Bought: $<%= @property.price_bought %></p>
+          <p>Price Bought: $<%= number_with_delimiter(@property.price_bought, :delimiter => ',') %></p>
           <p>Year Built: <%= @property.year_built %></p>
           <p>Added Construction: <%= @property.sq_meters_added %>m2</p>
           <p>Year Renovated: <%= @property.year_renovated %></p>
@@ -96,6 +96,7 @@
         <h3 class="border-bottom", style="margin-top:20px">Estimated Price</h3>
           <h5 style="text-align:center; margin-bottom:30px; margin-top:10px">LinkEstate estimated price is: </h5>
           <h4 style="text-align:center; margin-bottom:15px">$ <%= @min_estimated_price.floor %> - $ <%= @max_estimated_price.floor %></h4>
+
     </div>
   </div>
 </div>

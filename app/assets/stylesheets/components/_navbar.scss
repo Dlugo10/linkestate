@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap'); skinnier font
+
 .navbar-lewagon {
   justify-content: space-between;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 240));
@@ -26,4 +29,20 @@
     color: black;
     font-weight: 700;
   }
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content:left;
+}
+
+#logo {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #1BB580;
+  // color: #006AFF; Zillow blue
+}
+.fas{
+  color: #1BB580;
+  font-size: 50px;
 }
