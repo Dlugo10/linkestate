@@ -18,8 +18,8 @@
   right: 8px;
   border-radius: 29px;
   border-color: #70A37F;
-  background-image: linear-gradient(rgb(39, 48, 71), rgb(84, 95, 121));
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  background-color: #1BB580;
+  color: white;
 }
 
 .form-control {
@@ -99,3 +99,8 @@
   margin-top: 10px;
 }
 
+#logo {
+  font-family: 'Cinzel Decorative', cursive;
+  color: #1BB580;
+  // color: #006AFF; Zillow blue
+}
