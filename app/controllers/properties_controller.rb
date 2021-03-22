@@ -37,6 +37,9 @@ class PropertiesController < ApplicationController
   def show
     @property = Property.find(params[:id])
     @estimated_value = @property.estimated_value
+    @min_estimated_price = @estimated_value - (@estimated_value * 5 / 100)
+    @max_estimated_price = @estimated_value + (@estimated_value * 5 / 100)
+
 
     authorize @property
   end
@@ -51,7 +54,7 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
     @property.user = current_user
     @property.save
-    redirect_to properties_path
+    redirect_to property_path(@property)
 
     authorize @property
   end

@@ -30,4 +30,18 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.center-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shrink{
+    flex-shrink: 0;
+    text-align: center;
+    align-items: center;
 }
