@@ -1,0 +1,20 @@
+<h1 class="border-bottom">Edit Tax History</h1>
+<div class="container-user-form">
+  <div class= 'divider'>
+    <div class='row justify-content-center'>
+      <div class="col-6", style="margin: 14px">
+
+        <%= simple_form_for [@property] do |f| %>
+          <%= f.input :year %>
+
+          <%= f.input :tax, as: :integer %>
+
+          <%= f.input :value %>
+
+
+          <div ><%= f.submit "Update Tax History", class:"btn btn-ghost"  %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

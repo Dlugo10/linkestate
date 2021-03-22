@@ -1,17 +1,17 @@
 
-<%# <div class="user_forms_container"> %>
+<% <div class="user_forms_container"> %>
   <div class='row justify-content-center'>
-    <div class="col-6"> 
+    <div class="col-6">
       <div>
         <h5 style="margin:34px">Tax History Timeline</h5>
         <div style="width:70%"><%= line_chart @property.tax_histories.to_line_chart, defer: true%></div>
       </div>
-      
+
     </div>
     <% if policy(@property.tax_histories.new).create? %>
-      <div><%= link_to 'Input Taxes', new_property_tax_history_path(params[:property_id]), class:"btn btn-ghost", style:"margin-top: 20px" %> </div> 
+      <div><%= link_to 'Input Taxes', new_property_tax_history_path(params[:property_id]), class:"btn btn-ghost", style:"margin-top: 20px" %> </div>
     <% end %>
-  <%# <%= link_to 'Update Values', edit_property_tax_history_path(@property.tax_histories, @property ) %> 
+    <%= link_to 'Update Values', edit_property_tax_history_path(@property.tax_histories, @property ) %>
 
   </div>
 </div>
