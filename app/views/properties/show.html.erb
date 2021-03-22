@@ -1,20 +1,20 @@
-<%= link_to "All the Properties", properties_path, class: 'btn btn-primary btn-sm' %>
+<%= link_to "Back to Listings", properties_path, class: 'btn btn-ghost' %>
 
 <div class="show-properties-container">
    <div class='row justify-content-center'>
       <div class="col-6">
 
     
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <%= cl_image_tag @property.photos.first.key, class: "d-block w-100" %>
-              </div>  
-            <% @property.photos.each do |photo|%> <%#https://stackoverflow.com/questions/37380953/how-to-iterate-through-an-array-of-images-using-bootstrap-carousel foiund how to iterate through this from this site#%>
-              <div class="carousel-item">
-                    <%= cl_image_tag photo.key, class: "d-block w-100" %>
-              </div>
-            <% end %>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag @property.photos.first.key, class: "d-block w-100" %>
+          </div>  
+        <% @property.photos.each do |photo|%> <%#https://stackoverflow.com/questions/37380953/how-to-iterate-through-an-array-of-images-using-bootstrap-carousel foiund how to iterate through this from this site#%>
+          <div class="carousel-item">
+                <%= cl_image_tag photo.key, class: "d-block w-100" %>
+          </div>
+        <% end %>
          </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -94,7 +94,9 @@
           <p>Year Renovated: <%= @property.year_renovated %></p>
 
         <h3 class="border-bottom", style="margin-top:20px">Estimated Price</h3>
-          <p>Based on the collection of data, the estimated price of <%= @property.title %> is: $<%= number_with_delimiter(@property.estimated_value.to_int, :delimiter => ',') %></p>
+          <h5 style="text-align:center; margin-bottom:30px; margin-top:10px">LinkEstate estimated price is: </h5>
+          <h4 style="text-align:center; margin-bottom:15px">$ <%= @min_estimated_price.floor %> - $ <%= @max_estimated_price.floor %></h4>
+
     </div>
   </div>
 </div>
