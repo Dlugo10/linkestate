@@ -296,7 +296,7 @@
 <div class="properties-container">
   <div class="row align-items-top">
 
-        <div class="card-container">
+    <div class="card-container">
 
         <% @properties.each do |property| %>
           <div class="card">
@@ -334,9 +334,9 @@
           </div>
         <% end %>
         <div class="center-form">
-          <%= will_paginate(@properties, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg shrink')  %>
+          <%= will_paginate(@properties, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-lg') %>
         </div>
-   </div>
+    </div>
 
     <div class="map-container">
 

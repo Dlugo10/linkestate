@@ -5,7 +5,7 @@
   <div class=logos>
     <%# <i class="fas fa-globe-americas"></i> GLOBE ICON%>
     <%# <i class="fas fa-tram"></i> TRAM ICON%>
-    <i class="fas fa-laptop-house"></i> 
+    <i class="fas fa-laptop-house" style="font-size: 50px"></i> 
     <h1 id="logo"> LinkEstate</h1>
   </div>
     <% end %>
@@ -22,13 +22,10 @@
           <p style="font-size: 16px; font-weight: 100;"><%= link_to "Home", root_path, class: "nav-link" %></p>
         </li> 
         <li class="nav-item">
-          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Buy", properties_path, class: "nav-link" %></p>
-        </li>
-        <li class="nav-item">
-          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Sell", new_property_path, class: "nav-link"%></p>
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Sell Real Estate", new_property_path, class: "nav-link"%></p>
         </li>        
         <li class="nav-item">
-          <p style="font-size: 16px; font-weight: 100;"><%= link_to "Real Estate", properties_path, class: "nav-link" %></p>
+          <p style="font-size: 16px; font-weight: 100;"><%= link_to "All Real Estate", properties_path, class: "nav-link" %></p>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
