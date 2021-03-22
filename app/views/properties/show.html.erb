@@ -39,7 +39,7 @@
         
         <h2 class="border-bottom", style="margin-top:20px"><%= @property.title %></h2>
 
-        <h3>$ <%= @property.price %></h3>
+        <h3>$ <%= number_with_delimiter(@property.price, :delimiter => ',') %></h3>
         <p>Property Type: <%= @property.propery_type %></p>
         <p>Bedrooms: <%= @property.bedrooms %></p>
 
@@ -88,13 +88,13 @@
 
         <h3 class="border-bottom", style="margin-top:20px">Additional Information</h3>
           <p>Year Bought: <%= @property.year_bought %></p>
-          <p>Price Bought: $<%= @property.price_bought %></p>
+          <p>Price Bought: $<%= number_with_delimiter(@property.price_bought, :delimiter => ',') %></p>
           <p>Year Built: <%= @property.year_built %></p>
           <p>Added Construction: <%= @property.sq_meters_added %>m2</p>
           <p>Year Renovated: <%= @property.year_renovated %></p>
 
         <h3 class="border-bottom", style="margin-top:20px">Estimated Price</h3>
-          <p>Based on the collection of data, the estimated price of <%= @property.title %> is: $<%= @property.estimated_value %></p>
+          <p>Based on the collection of data, the estimated price of <%= @property.title %> is: $<%= number_with_delimiter(@property.estimated_value.to_int, :delimiter => ',') %></p>
     </div>
   </div>
 </div>
