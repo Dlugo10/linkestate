@@ -1,9 +1,10 @@
-<h1 style="color:black" class="border-bottom">List Your Property</h1>
+<h1 style="color:rgb(39, 48, 71) " class="border-bottom">List Your Property</h1>
 <h4 style="display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 29px">Please fill out the entire form for more reach</h4>
+    margin-top: 29px;
+    color:rgb(39, 48, 71)">Please fill out the entire form for more reach</h4>
 <div class="container-user-form">
   <div class= 'divider'>
     <div class='row justify-content-center'>
@@ -16,6 +17,9 @@
           <%= f.input :price, as: :integer %>
         
           <%= f.input :address %>
+
+          <%= f.input :propery_type, :collection => %w[Condo House Apartment Town House] %>
+          
       
           <%= f.input :bedrooms %>
           <%= f.input :bathrooms %>
@@ -56,7 +60,7 @@
             <%= f.input :attached_garage %>
           </div>
 
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true }, style:"btn btn-primary" %>
             
           <div ><%= f.submit "Create Property", class:"btn btn-ghost"  %></div>
         <% end %>
