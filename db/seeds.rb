@@ -85,7 +85,35 @@ puts 'Creating 10 new Properties'
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183758/LinkEstate/house_9_jou77h_pevidt.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183759/LinkEstate/house_ihbbue_pkrcy8.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183759/LinkEstate/house2_f4ujjv_czyjop.jpg',
-        'https://res.cloudinary.com/atc5nc/image/upload/v1616183768/LinkEstate/tribeca_flat_exterior_gaau1d_cxz5e5.jpg'
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616183768/LinkEstate/tribeca_flat_exterior_gaau1d_cxz5e5.jpg', 
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525868/LinkEstate%20Seeds%20Homes/189371155_f72z0v.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525861/LinkEstate%20Seeds%20Homes/143311732_urivqv.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525856/LinkEstate%20Seeds%20Homes/20141016-GH-IHH-slide-AG7N-superJumbo_nhc3m8.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525847/LinkEstate%20Seeds%20Homes/3208656e618b73ba7a2b85e347acb70a_agzx8p.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525839/LinkEstate%20Seeds%20Homes/101854-1_qzznwg.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525833/LinkEstate%20Seeds%20Homes/2413e56e184159603befa84aebee4cf8_yu5xwv.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525827/LinkEstate%20Seeds%20Homes/27IHH-Ecuador-slide-W8LD-jumbo_j6behy.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525811/LinkEstate%20Seeds%20Homes/sddefault_v3hfmv.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525804/LinkEstate%20Seeds%20Homes/Rustic-Mountain-House-Ward-Young-Architects-01-1-Kindesign_p75lzd.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525797/LinkEstate%20Seeds%20Homes/rs1700718_img-31_large_qamtl3.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525791/LinkEstate%20Seeds%20Homes/roberto-benito-gonzalo-viramonte-suburban-house_habfq4.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525786/LinkEstate%20Seeds%20Homes/Red-Rocks-House-The-Ranch-Mine-1_tkoptm.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525775/LinkEstate%20Seeds%20Homes/quito-observatory-house-ecuador-2_prsxob.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525769/LinkEstate%20Seeds%20Homes/PORTADA_vsqavg.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525761/LinkEstate%20Seeds%20Homes/Oceanside-Farms-1-1800x1013_ih6pma.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525754/LinkEstate%20Seeds%20Homes/mountain-bounty-bed-and_zxidfm.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525747/LinkEstate%20Seeds%20Homes/im-238306_uaruqc.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525739/LinkEstate%20Seeds%20Homes/Homes-Condos-and-Land-for-Sale_uprydz.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525725/LinkEstate%20Seeds%20Homes/cb53bf3cfb04a36aa9e8b74434907294_g7wacc.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525711/LinkEstate%20Seeds%20Homes/239606260_m6nhom.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525058/LinkEstate%20Seeds%20Homes/Royal_Belize_Beach_Resort_-_panoramio_y1koeh.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525052/LinkEstate%20Seeds%20Homes/Whale_beach_house_2-popovbassarchitects_iqvkem.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525048/LinkEstate%20Seeds%20Homes/Lima_Beach_House_k2ywxt.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616524925/LinkEstate%20Seeds%20Homes/Homes-LuxuryHome3-Bel_Air_California_hdh5ph.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616526306/LinkEstate%20Seeds%20Homes/sjuxr-casa-grande-8034-hor-feat_m56fy6.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616526319/LinkEstate%20Seeds%20Homes/casa-la-famiglia-villa-entrance-1-1200x800_cwbf13.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616526400/LinkEstate%20Seeds%20Homes/Southern-Living-Idea-House-Charlottesville-Bunny-Williams-stone-exterior_cfvayd.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616526436/LinkEstate%20Seeds%20Homes/unnamed_mlu4ik.jpg'
     ].sample # IT CAN BE BUT IT DOESNT HAVE TO BE CLOUDINARY
     filename = File.basename(URI.parse(url).path)
     file = URI.open(url)
@@ -107,9 +135,13 @@ puts 'Creating 10 new Properties'
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183754/LinkEstate/26200927-formal-living_cover_2000x1333_jrvtqf.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183755/LinkEstate/bcf22a1aead09fa56f6898606df6c3b3_hzerkn.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183755/LinkEstate/bungalow_lizr1y_nacacg.jpg',
-        'https://res.cloudinary.com/atc5nc/image/upload/v1616183757/LinkEstate/bung1-main_rmzpxi.jpg', 
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616183757/LinkEstate/bung1-main_rmzpxi.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525818/LinkEstate%20Seeds%20Homes/24e8f08ba83e34213572acbdb1061bf0_wvwiq5.jpg', 
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183755/LinkEstate/bungalow_3_fphmir_ym81mu.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183758/LinkEstate/denton_lan_night_gn4dae_zpr9hr.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525732/LinkEstate%20Seeds%20Homes/guayaquil-luxury-airbnb-ecuador.1613675782_v7mhjr.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616526489/LinkEstate%20Seeds%20Homes/227629172_ydrue6.jpg',
+        'https://res.cloudinary.com/atc5nc/image/upload/v1616525717/LinkEstate%20Seeds%20Homes/274536945_m2e8bw.jpg',
         'https://res.cloudinary.com/atc5nc/image/upload/v1616183760/LinkEstate/farrington-600x450_pmkubk_po4wd2.jpg'
     ].sample # IT CAN BE BUT IT DOESNT HAVE TO BE CLOUDINARY
     filename_interior = File.basename(URI.parse(url_2).path)
