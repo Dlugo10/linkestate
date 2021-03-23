@@ -1,5 +1,4 @@
-<div class="container">
- </div>
+
   <div class="search-bar">
     <%= form_tag properties_path, method: :get do %>
       <%= text_field_tag :query,
@@ -40,7 +39,7 @@
 
       <div class="Home-searchRangeInput">
         <label class="Title Title--secondarySmCaps Home-searchFieldLabel u-color-textSecondary" for="price_from">Minimum Price</label>
-          <select id="price_from" style="border-radius: 28px" class="Home-searchRangeSelect jsPriceSelect" name="price_from" se:behavior="support_custom_value" data-nochangeonload="">
+           <select id="price_from" style="border-radius: 28px" class="Home-searchRangeSelect jsPriceSelect" name="price_from" se:behavior="support_custom_value" data-nochangeonload="">
                 <option value="">Any</option>
                 <option value="100000">$100,000</option>
                 <option value="150000">$150,000</option>
@@ -351,5 +350,4 @@
     </div>
   </div>
 </div>
-
 

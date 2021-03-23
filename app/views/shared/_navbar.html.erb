@@ -6,7 +6,7 @@
   <div class=logos>
     <%# <i class="fas fa-globe-americas"></i> GLOBE ICON%>
     <%# <i class="fas fa-tram"></i> TRAM ICON%>
-    <i class="fas fa-laptop-house" style="font-size: 50px"></i> 
+    <i class="fas fa-laptop-house" style="font-size: 50px; color:#1BB580"></i> 
     <h1 id="logo"> LinkEstate</h1>
   </div>
     <% end %>
@@ -31,7 +31,6 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My Listings", properties_path, class: "dropdown-item", 'data-turbolinks': false  %>
             <%= link_to "My Favorites", favorites_path, class: "dropdown-item", 'data-turbolinks': false  %> 
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
