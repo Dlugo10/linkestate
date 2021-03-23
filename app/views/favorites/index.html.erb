@@ -9,8 +9,10 @@
 </div>
 
 <% if policy(Property).create? %>
-  <%= link_to "Create a Property", new_property_path, class: 'btn btn-dark' %> 
+  <%= link_to "Create a Property", new_property_path, class: 'btn btn-ghost', style:"margin-left:10px" %> 
 <% end %>
+
+<h1 style="color:#1BB580; font-weight: 700">Saved Properties</h1>
  
 
 <div class="properties-container">
@@ -25,8 +27,8 @@
     </div>
     <div class="card-container">
       <% @favorites.each do |favorite| %>
-        <div class="card">
-          <%= link_to property_path(favorite.property) do %>
+        <div class="card" style='style="text-decoration: none;'>
+          <%= link_to property_path(favorite.property), style:'text-decoration:none'  do %>
             <div class="card-photo">
                 <% if favorite.property.photos.any? %>
                   <%= cl_image_tag favorite.property.photos.first.key, class: "card-img-top" %>
@@ -47,7 +49,7 @@
                               <h6>&nbsp;&nbsp;<%= favorite.property.zip_code %></h6>
                             </div> 
             </div>               
-            <%= link_to "", property_favorite_path(favorite.property, favorite), method: :delete, class:"fas fa-heart heart-button", remote: true %>
+            <%= link_to "", property_favorite_path(favorite.property, favorite), method: :delete, class:"fas fa-heart heart-button", style:'text-decoration:none; margin-left:10px; margin-bottom:10px', remote: true %>
           <%end %>
         </div>             
       <% end %>

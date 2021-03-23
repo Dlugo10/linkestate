@@ -28,76 +28,75 @@
           </a>
     </div>    
  
+      <h2 class="border-bottom", style="margin-top:20px; color:#1BB580"><%= @property.title %></h2>
 
+      <h3>$ <%= number_with_delimiter(@property.price, :delimiter => ',') %></h3>
+      <p>Property Type: <%= @property.propery_type %></p>
+      <p>Bedrooms: <%= @property.bedrooms %></p>
 
-          <% if policy(@property).edit? %>
-            <h5><%= link_to "Edit Property", edit_property_path(@property), class:"btn btn-ghost", style:"margin-top:20px" %></h5>
-          <% end %>
-          <% if policy(@property).destroy? %>
-            <a><%= link_to "Delete Property", property_path(@property), method: "delete", class: "btn btn-ghost", data: { confirm: "Are you sure?" } %> </a>
-          <% end %>
+      <p>Bathrooms: <%= @property.bathrooms %></p>
 
-           
+      <h3 class="border-bottom", style="margin-top:20px; color:#1BB580">Estimated Price</h3>
+      <h5 style=" margin-bottom:30px; margin-top:10px">LinkEstate estimated price is: </h5>
+      <h4 style= "margin-bottom:15px; font-weight: 600;">$ <%= number_with_delimiter(@min_estimated_price.floor, :delimiter => ',') %> - $ <%= number_with_delimiter(@max_estimated_price.floor, :delimiter => ',') %></h4>
+
+      <h3 class="border-bottom", style="margin-top:20px; color:#1BB580">Location</h3>
+        <p>City: <%= @property.city %></p>
+        <p>Address: <%= @property.address %></p>
+        <p>Zip Code: <%= @property.zip_code %></p>
+        <p>Neighborhood: <%= @property.neighborhood %></p>
+        <p>Neighborhood Info: <%= @property.neighborhood_info %></p>
+
+      <h3 class="border-bottom", style="margin-top:20px; color:#1BB580">Terrain and Construction</h3>
+
+        <p>Construction: <%= @property.sq_meters %>m2</p>
+        <p>Land Extension: <%= @property.sq_meters_land %>m2</p>
+
+      <h3 class="border-bottom" style='color:#1BB580'>Amenities</h3>
+
+        <p>Beach Front: 
+          <%= text_boolean(@property.beachfront) %>
+        </p>
+        <p>Water Front: 
+          <%= text_boolean(@property.waterfront) %>
+        </p>
+        <p>Pool: 
+          <%= text_boolean(@property.pool) %>
+        </p>
+        <p>Central Air: 
+          <%= text_boolean(@property.waterfront) %>
+        </p>
+        <p>Dish Washer: 
+          <%= text_boolean(@property.dishwasher) %>
+        </p>
+        <p>Washing Machine: 
+          <%= text_boolean(@property.washing_machine) %>
+        </p>
+        <p>Garage: 
+          <%= text_boolean(@property.attached_garage) %>
+        </p>
+
+      <h3 class="border-bottom", style="margin-top:20px; color:#1BB580">Tax History</h3>
         
-        <h2 class="border-bottom", style="margin-top:20px"><%= @property.title %></h2>
+      <h5><%= link_to "Tax History",  property_tax_histories_path(@property.id), class:"btn btn-ghost", style:"margin-top:20px", 'data-turbolinks': false %></h5>
+      
 
-        <h3>$ <%= number_with_delimiter(@property.price, :delimiter => ',') %></h3>
-        <p>Property Type: <%= @property.propery_type %></p>
-        <p>Bedrooms: <%= @property.bedrooms %></p>
+      <h3 class="border-bottom", style="margin-top:20px; color:#1BB580">Additional Information</h3>
+        <p>Year Bought: <%= @property.year_bought %></p>
+        <p>Price Bought: $<%= number_with_delimiter(@property.price_bought, :delimiter => ',') %></p>
+        <p>Year Built: <%= @property.year_built %></p>
+        <p>Added Construction: <%= @property.sq_meters_added %>m2</p>
+        <p>Year Renovated: <%= @property.year_renovated %></p>
 
-        <p>Bathrooms: <%= @property.bathrooms %></p>
-
-        <h3 class="border-bottom", style="margin-top:20px">Location</h3>
-          <p>City: <%= @property.city %></p>
-          <p>Address: <%= @property.address %></p>
-          <p>Zip Code: <%= @property.zip_code %></p>
-          <p>Neighborhood: <%= @property.neighborhood %></p>
-          <p>Neighborhood Info: <%= @property.neighborhood_info %></p>
-
-        <h3 class="border-bottom", style="margin-top:20px">Terrain and Construction</h3>
-
-          <p>Construction: <%= @property.sq_meters %>m2</p>
-          <p>Land Extension: <%= @property.sq_meters_land %>m2</p>
-
-        <h3 class="border-bottom">Amenities</h3>
-
-          <p>Beach Front: 
-            <%= text_boolean(@property.beachfront) %>
-          </p>
-          <p>Water Front: 
-            <%= text_boolean(@property.waterfront) %>
-          </p>
-          <p>Pool: 
-            <%= text_boolean(@property.pool) %>
-          </p>
-          <p>Central Air: 
-            <%= text_boolean(@property.waterfront) %>
-          </p>
-          <p>Dish Washer: 
-            <%= text_boolean(@property.dishwasher) %>
-          </p>
-          <p>Washing Machine: 
-            <%= text_boolean(@property.washing_machine) %>
-          </p>
-          <p>Garage: 
-            <%= text_boolean(@property.attached_garage) %>
-          </p>
-
-        <h3 class="border-bottom", style="margin-top:20px">Tax History</h3>
-          
-        <h5><%= link_to "Tax History",  property_tax_histories_path(@property.id), class:"btn btn-ghost", style:"margin-top:20px", 'data-turbolinks': false, target:"_blank" %></h5>
-        
-
-        <h3 class="border-bottom", style="margin-top:20px">Additional Information</h3>
-          <p>Year Bought: <%= @property.year_bought %></p>
-          <p>Price Bought: $<%= number_with_delimiter(@property.price_bought, :delimiter => ',') %></p>
-          <p>Year Built: <%= @property.year_built %></p>
-          <p>Added Construction: <%= @property.sq_meters_added %>m2</p>
-          <p>Year Renovated: <%= @property.year_renovated %></p>
-
-        <h3 class="border-bottom", style="margin-top:20px">Estimated Price</h3>
-          <h5 style="text-align:center; margin-bottom:30px; margin-top:10px">LinkEstate estimated price is: </h5>
-          <h4 style="text-align:center; margin-bottom:15px">$ <%= @min_estimated_price.floor %> - $ <%= @max_estimated_price.floor %></h4>
+      <div class="link">  
+        <% if policy(@property).edit? %>
+          <h5><%= link_to "Edit Property", edit_property_path(@property), class:"btn btn-ghost", style:"margin-top:20px" %></h5>
+        <% end %>
+      </div>
+    
+      <% if policy(@property).destroy? %>
+        <a><%= link_to "Delete Property", property_path(@property), method: "delete", class: "btn btn-ghost", data: { confirm: "Are you sure?" }, style:'margin-top: 20px' %> </a>
+      <% end %>
 
     </div>
   </div>
