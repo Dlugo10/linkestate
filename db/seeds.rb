@@ -31,21 +31,22 @@ titles = ["Big Blue House", "Nice and Spacious", "Luxury Home", "Cheap Offer", "
 end
 puts "Finished Users"
 
-puts 'Creating 10 new Properties'
+puts 'Creating 20 new Properties'
 
-10.times do 
+20.times do 
     property = Property.create!( # CREATE THE PRODUCT BEFORE LINKING WITH IMAGE
     user_id: User.all.sample.id,
-    price: rand(100000..1000000),
-    address: ["Quito, Ecuador", "Guayas, Ecuador", "Quevedo, Ecuador", "Sucumbios, Ecuador"].sample,
-    city: ["Quito", 'Manabi', 'Guayaquil', 'Loja'].sample,
+    price: rand(100000..400000),
+    city: "",
+    address: ["Quito, Ecuador", 'Manabi, Ecuador', 'Guayaquil, Ecuador', 'Loja, Ecuador', 'Quevedo, Ecuador', 'Portoviejo, Ecuador', 'Santo Domingo, Ecuador',
+     'Cuenca, Ecuador', 'Machala, Ecuador', 'Ibarra, Ecuador', 'Ambato, Ecuador', 'Esmeraldas, Ecuador', 'Riobamba, Ecuador'].sample,
     zip_code: rand(170700..170900),
     neighborhood_info: "Lovely parks and churches around with a private school",
     neighborhood: "Metropolitano",
-    sq_meters: rand(500..1000),
+    sq_meters: rand(30..700),
     bedrooms: rand(2..7),
     bathrooms: rand(2..7),
-    sq_meters_land: rand(5000..20000),
+    sq_meters_land: rand(100..2000),
     year_bought: rand(2000..2020),
     price_bought: rand(100000..800000),
     sq_meters_added: rand(0..300),
